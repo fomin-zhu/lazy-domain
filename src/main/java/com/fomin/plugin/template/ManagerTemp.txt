@@ -1,6 +1,6 @@
 package $packageName.domain.manager;
 
-import $packageName.domain.Builder;
+import $packageName.domain.Factory;
 import $packageName.domain.entity.$fileName;
 import $packageName.repo.$fileNameRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class $fileNameManager {
     @Autowired
-    private Builder builder;
+    private Factory factory;
     @Autowired
     private $fileNameRepository repository;
 
