@@ -1,11 +1,11 @@
 <idea-plugin>
-    <id>com.fomin.plugin.domain</id>
+    <id>com.fomin.plugin</id>
     <name>Lazy Domain</name>
-    <vendor email="zhufuming@deepexi.com" url="http://www.deepexi.com">fomin</vendor>
-    <version>1.0.0-beta1</version>
-    <description><![CDATA[1.0.0-beta1<br>
-    <p>自动创建领域模型DO、DTO、BO、VO、Query</p><br>
-    <p>自动创建相关实现类Mapper、Repository、Manager、Service和Controller</p>
+    <vendor email="zhufuming@deepexi.com" url="https://github.com/fomin-zhu/lazy-domain">fomin</vendor>
+    <version>0.1.2-alpha</version>
+    <description><![CDATA[0.1.0-alpha<br>
+    <p>Automatically create domain models DO, DTO, BO, VO, query</p><br>
+    <p>Automatically create related implementation classes Mapper, Repository, Manager, Service and Controller</p>
     ]]></description>
 
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
@@ -18,8 +18,8 @@
 
     <actions>
         <!-- Add your actions here -->
-        <action id="EntityPlugin" class="com.fomin.plugin.EntityAutomaticCreateAction" text="DomainEntity"
-                description="生成领域实体">
+        <action id="EntityPlugin" class="com.fomin.plugin.EntityAutomaticCreateAction" text="Domain Entity"
+                description="Generate domain entities">
             <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
             <keyboard-shortcut first-keystroke="alt D" keymap="$default"/>
         </action>

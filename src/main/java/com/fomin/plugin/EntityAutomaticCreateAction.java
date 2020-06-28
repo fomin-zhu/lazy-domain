@@ -9,6 +9,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.BufferedWriter;
@@ -28,6 +29,7 @@ import java.util.Objects;
  */
 public class EntityAutomaticCreateAction extends AnAction {
     private Project project;
+    private String filePath;
     private String packageName;
     private String authorName;
     private String entityName;
@@ -36,19 +38,22 @@ public class EntityAutomaticCreateAction extends AnAction {
     public void actionPerformed(AnActionEvent e) {
         project = e.getData(PlatformDataKeys.PROJECT);
         packageName = getPackageName(e);
-        init();
-        refreshProject(e);
+        if (StringUtils.isNotBlank(packageName)) {
+            init();
+            refreshProject(e);
+        }
     }
 
     private String getPackageName(AnActionEvent e) {
         VirtualFile virtualFile = e.getData(PlatformDataKeys.VIRTUAL_FILE);
-        if (!virtualFile.isDirectory()) {
-            virtualFile = virtualFile.getParent();
+        if (Objects.isNull(virtualFile)) {
+            Messages.showInfoMessage(project, "Error getting file directory", "Error");
+            return "";
         }
         Module module = ModuleUtil.findModuleForFile(virtualFile, project);
         String moduleRootPath = ModuleRootManager.getInstance(module).getContentRoots()[0].getPath();
-        String actionDir = virtualFile.getPath();
-        String str = StringUtils.substringAfter(actionDir, moduleRootPath + "/src/main/java/");
+        filePath = virtualFile.getPath();
+        String str = StringUtils.substringAfter(filePath, moduleRootPath + "/src/main/java/");
         return str.replace("/", ".");
     }
 
@@ -77,10 +82,11 @@ public class EntityAutomaticCreateAction extends AnAction {
             authorName = author;
             entityName = fileName;
             if (StringUtils.isBlank(entityName)) {
+                Messages.showInfoMessage(project, "Please enter the entity name", "Error");
                 return;
             }
             createEntityFile(type);
-            Messages.showInfoMessage(project, "创建领域相关类成功", "创建");
+            VirtualFileManager.getInstance().syncRefresh();
         });
         dialog.setVisible(true);
     }
@@ -94,7 +100,7 @@ public class EntityAutomaticCreateAction extends AnAction {
             if (param != null) {
                 String content = readTemplateFile(param.tempName);
                 content = dealTemplateContent(content);
-                writeToFile(content, getPackagePath() + param.path, param.fileName);
+                writeToFile(content, filePath + "/" + param.path, param.fileName);
             }
         });
 
@@ -107,7 +113,7 @@ public class EntityAutomaticCreateAction extends AnAction {
             case BASE:
                 return new CreateParam("DomainEntity.txt", "domain/entity/", "BaseEntity.java");
             case BUILDER:
-                return new CreateParam("Builder.txt", "domain/", "Builder.java");
+                return new CreateParam("Builder.txt", "domain/", "Factory.java");
             case DO:
                 return new CreateParam("DoTemp.txt", "model/entity/", entityName + "DO.java");
             case DTO:

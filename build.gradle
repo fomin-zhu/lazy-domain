@@ -4,9 +4,16 @@ plugins {
 }
 
 group 'com.deepexi.plugin'
-version '1.0.0-beta1'
+version '0.1.2-alpha'
 
 repositories {
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
+    maven {
+        url 'http://dl.bintray.com/jetbrains/intellij-plugin-service'
+    }
+    jcenter()
     mavenCentral()
 }
 
@@ -21,8 +28,9 @@ intellij {
 }
 patchPluginXml {
     changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
+      First commit.<br>
+      <em>lazy domain</em>
+      """
 }
 
 //将src文件夹中的资源文件同时打包
@@ -30,4 +38,9 @@ processResources {
     from('src/main/java') {
         include '**/*.txt'
     }
+}
+
+publishPlugin {
+    token 'perm:emZtMDYxMjA2.OTItMjI2Mw==.EvEPImu0Sk2Bxz5XuhmSchOe6ZrmQk'
+    channels 'alpha'
 }
