@@ -1,0 +1,12 @@
+package $packageName.domain;
+
+import org.springframework.stereotype.Component;
+
+/**
+ * @author $author
+ * @since $date
+ */
+@Component
+public class Factory {
+
+}

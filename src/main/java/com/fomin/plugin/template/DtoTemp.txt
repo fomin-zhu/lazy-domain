@@ -1,0 +1,12 @@
+package $packageName.model.dto;
+
+import lombok.Data;
+
+/**
+ * @author $author
+ * @since $date
+ */
+@Data
+public class $fileNameDTO {
+
+}

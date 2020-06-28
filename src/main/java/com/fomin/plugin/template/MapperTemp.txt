@@ -1,0 +1,14 @@
+package $packageName.mapper;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import $packageName.model.entity.$fileNameDO;
+import org.apache.ibatis.annotations.Mapper;
+
+/**
+ * @author $author
+ * @since $date
+ */
+@Mapper
+public interface $fileNameMapper extends BaseMapper<$fileNameDO> {
+
+}

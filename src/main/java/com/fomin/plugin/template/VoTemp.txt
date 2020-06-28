@@ -1,0 +1,14 @@
+package $packageName.model.vo;
+
+import io.swagger.annotations.ApiModel;
+import lombok.Data;
+
+/**
+ * @author $author
+ * @since $date
+ */
+@Data
+@ApiModel("VO")
+public class $fileNameVO {
+
+}

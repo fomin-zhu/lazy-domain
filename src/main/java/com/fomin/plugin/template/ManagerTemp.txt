@@ -1,0 +1,26 @@
+package $packageName.domain.manager;
+
+import $packageName.domain.Builder;
+import $packageName.domain.entity.$fileName;
+import $packageName.repo.$fileNameRepository;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+/**
+ * @author $author
+ * @since $date
+ */
+@Slf4j
+@Component
+public class $fileNameManager {
+    @Autowired
+    private Builder builder;
+    @Autowired
+    private $fileNameRepository repository;
+
+    public $fileName get(Long id) {
+        // todo build model
+        return null;
+    }
+}

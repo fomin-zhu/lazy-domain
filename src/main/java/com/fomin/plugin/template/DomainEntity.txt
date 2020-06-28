@@ -1,0 +1,24 @@
+package $packageName.domain.entity;
+
+/**
+ * @author $author
+ * @since $date
+ */
+public abstract class BaseEntity<T, R> {
+    private T id;
+
+    private R repo;
+
+    public T getId() {
+        return id;
+    }
+
+    protected R getRepo() {
+        return repo;
+    }
+
+    public BaseEntity(T id, R repo) {
+        this.id = id;
+        this.repo = repo;
+    }
+}

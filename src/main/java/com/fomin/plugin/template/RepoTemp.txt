@@ -1,0 +1,36 @@
+package $packageName.repo;
+
+import $packageName.mapper.$fileNameMapper;
+import $packageName.model.entity.$fileNameDO;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+/**
+ * @author $author
+ * @since $date
+ */
+@Repository
+@Slf4j
+public class $fileNameRepository {
+    @Autowired
+    private $fileNameMapper mapper;
+
+    public $fileNameDO selectById(Long id) {
+        return mapper.selectById(id);
+    }
+
+    public void update(Long id, $fileNameDO entity) {
+        entity.setId(id);
+        mapper.updateById(entity);
+    }
+
+    public Long insert($fileNameDO entity) {
+        mapper.insert(entity);
+        return entity.getId();
+    }
+
+    public void delete(Long id) {
+        mapper.deleteById(id);
+    }
+}

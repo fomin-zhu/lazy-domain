@@ -1,0 +1,19 @@
+package $packageName.controller;
+
+import $packageName.service.$fileNameService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author $author
+ * @since $date
+ */
+@RequestMapping("/")
+@RestController
+@Validated
+public class $fileNameController {
+    @Autowired
+    private $fileNameService service;
+}

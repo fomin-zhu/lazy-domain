@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.21'
+}
+
+group 'com.deepexi.plugin'
+version '1.0.0-beta1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version 'IC-2018.1'
+    intellij.updateSinceUntilBuild false
+}
+patchPluginXml {
+    changeNotes """
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>"""
+}
+
+//将src文件夹中的资源文件同时打包
+processResources {
+    from('src/main/java') {
+        include '**/*.txt'
+    }
+}

@@ -1,0 +1,19 @@
+package $packageName.domain.entity;
+
+import $packageName.model.entity.$fileNameDO;
+import $packageName.repo.$fileNameRepository;
+
+/**
+ * @author $author
+ * @since $date
+ */
+public class $fileName extends BaseEntity<Long, $fileNameRepository>  {
+
+    public $fileName(Long id, $fileNameRepository repo){
+        super(id, repo);
+    }
+
+    public $fileNameDO data() {
+        return getRepo().selectById(getId());
+    }
+}

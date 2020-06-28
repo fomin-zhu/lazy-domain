@@ -1,0 +1,27 @@
+<idea-plugin>
+    <id>com.fomin.plugin.domain</id>
+    <name>Lazy Domain</name>
+    <vendor email="zhufuming@deepexi.com" url="http://www.deepexi.com">fomin</vendor>
+    <version>1.0.0-beta1</version>
+    <description><![CDATA[1.0.0-beta1<br>
+    <p>自动创建领域模型DO、DTO、BO、VO、Query</p><br>
+    <p>自动创建相关实现类Mapper、Repository、Manager、Service和Controller</p>
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <idea-version since-build="173.0"/>
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="EntityPlugin" class="com.fomin.plugin.EntityAutomaticCreateAction" text="DomainEntity"
+                description="生成领域实体">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <keyboard-shortcut first-keystroke="alt D" keymap="$default"/>
+        </action>
+    </actions>
+</idea-plugin>

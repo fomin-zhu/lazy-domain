@@ -1,0 +1,12 @@
+package $packageName.model.bo;
+
+import lombok.Data;
+
+/**
+ * @author $author
+ * @since $date
+ */
+@Data
+public class $fileNameBO {
+
+}
