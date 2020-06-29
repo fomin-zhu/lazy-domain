@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.deepexi.plugin'
-version '0.1.3-alpha'
+version '0.1.0'
 
 repositories {
     maven {
@@ -28,7 +28,12 @@ intellij {
 }
 patchPluginXml {
     changeNotes """
-      fix import class bug
+      <h3>[0.1.0]-[2020.06.29]</h3>
+      <ul>
+        <li>feat:Support minimum version 173+</li>
+        <li>feat:Add default Entity abstract class</li>
+        <li>feat:Add factory creation class</li> 
+      <ul>
       """
 }
 
@@ -41,5 +46,5 @@ processResources {
 
 publishPlugin {
     token 'perm:emZtMDYxMjA2.OTItMjI2Mw==.EvEPImu0Sk2Bxz5XuhmSchOe6ZrmQk'
-    channels 'alpha'
+    channels 'stable'
 }

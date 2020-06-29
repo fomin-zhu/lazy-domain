@@ -2,8 +2,8 @@
     <id>com.fomin.plugin</id>
     <name>Lazy Domain</name>
     <vendor email="zhufuming@deepexi.com" url="https://github.com/fomin-zhu/lazy-domain">fomin</vendor>
-    <version>0.1.3-alpha</version>
-    <description><![CDATA[0.1.0-alpha<br>
+    <version>0.1.0</version>
+    <description><![CDATA[
     <p>Automatically create domain models DO, DTO, BO, VO, query</p><br>
     <p>Automatically create related implementation classes Mapper, Repository, Manager, Service and Controller</p>
     ]]></description>
