@@ -10,6 +10,7 @@
 
 * 下载jar文件
 >https://plugins.jetbrains.com/plugin/14620-lazy-domain/update/90330
+>或者从lib文件夹下载
 * 安装jar文件
 >打开Idea，在Plugins管理页面，选择Install plugin from Disk。加载刚刚下载的jar文件
 * 创建文件
