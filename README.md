@@ -8,9 +8,8 @@
 * 自动创建Mapper, Repository, Manager, Service和Controller实现类
 #### 使用
 
-* 下载jar文件
->https://plugins.jetbrains.com/plugin/14620-lazy-domain/update/90330
->或者从lib文件夹下载
+* 下载zip文件
+>https://github.com/fomin-zhu/lazy-domain/blob/master/lib/lazy-domain-0.1.0.zip
 * 安装jar文件
 >打开Idea，在Plugins管理页面，选择Install plugin from Disk。加载刚刚下载的jar文件
 * 创建文件
