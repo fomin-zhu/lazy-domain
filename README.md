@@ -15,7 +15,7 @@
 * plugin市场下载
 > 在idea plugin搜索lazy domain安装
 * 创建文件
-> 右键选择项目目录，选择Domain Entity，输入作者，实体名称等，点击确定即可
+> 右键选择项目目录，选择Domain Entity，输入作者，实体名称等，点击确定即可 <br/>
 > 或者选择项目目录，使用ALt+D快捷键，输入作者，实体名称等，点击确定即可
 
 ![图片](https://uploader.shimo.im/f/tqAkxDnaYcGOsWAw.png!thumbnail)
