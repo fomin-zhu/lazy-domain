@@ -24,5 +24,7 @@
 
 ![图片](https://uploader.shimo.im/f/xR7nXP5JJmkq89aI.png!thumbnail)
 
+#### 未来
+> 可以连接mysql数据库生成相应的类
  
 
