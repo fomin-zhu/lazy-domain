@@ -9,9 +9,10 @@
 #### 使用
 
 * 下载zip文件
->https://github.com/fomin-zhu/lazy-domain/blob/master/lib/lazy-domain-0.1.0.zip
+>https://plugins.jetbrains.com/plugin/14620-lazy-domain/update/90519
 * 安装jar文件
 >打开Idea，在Plugins管理页面，选择Install plugin from Disk。加载刚刚下载的jar文件
+> 在idea plugin的plugin搜索lazy domain安装
 * 创建文件
 >右键选择项目目录，选择Domain Entity，输入作者，实体名称等，点击确定即可
 >或者选择项目目录，使用ALt+D快捷键，输入作者，实体名称等，点击确定即可
